@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt
 import scipy
 from scipy import ndimage, signal
 import brian2 as b2
-import cortex_parameters
-from cortex_parameters import *
+import parameters
+from parameters import *
 import random
 import collections
 import pandas as pd

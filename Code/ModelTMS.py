@@ -27,7 +27,7 @@ def run_main_model(circuit_type = 'cortical',  TMS_dir = 1, exc_weight = 1, inh_
     
     #Table of connections ### Change this for DiLazzaro versus original
     if circuit_type == 'cortical':
-        filename = 'TMS_connections_no6.csv'
+        filename = 'TMS_connections.csv'
     elif circuit_type == 'DiLazzaro':
         filename = 'DiLazzaro_TMS_connections_1.csv' ### Change to filename for DiLazzaro Circuits
     con_tab = pd.read_csv('../Connection_Tables/' + filename, delimiter=' ', index_col=False)
@@ -54,7 +54,8 @@ def run_main_model(circuit_type = 'cortical',  TMS_dir = 1, exc_weight = 1, inh_
     cortex_model.init_synapses(params1.eqs_syn, params1.e_pre, params1.i_pre)
     
     ### Synapses ### ### ### ### ### ### ### ### ### ### ### ### ### Define connectivity type here ###
-    syn_g, nsyn_array = cortex_model.create_synapses(n_dict, n_groups, con_tab, 'readin', ignore_syn = syn_num, del_tab = False, 
+    ### use 'readin' for connectivity used in paper - needs i_dict_compressed.npz and i_dict_compressed.npz files avaliable from https://auckland.figshare.com/articles/model/Connectivity_Data_for_Motor_Cortex_Model/23513124 
+    syn_g, nsyn_array = cortex_model.create_synapses(n_dict, n_groups, con_tab, 'random', ignore_syn = syn_num, del_tab = False, 
                                                      exc_weight = exc_weight, inh_weight = inh_weight, 
                                                      exc_delay = exc_del, exc_del_std = 0.5*exc_del, inh_delay = inh_del, inh_del_std = 0.5*inh_del) ### 'random', 'spatial'
     syn_group.append(syn_g)

@@ -7,8 +7,8 @@ import numpy as np
 import brian2 as b2
 import collections
 import random
-import cortex_parameters as params1
-from cortex_parameters import *
+import parameters as params1
+from parameters import *
 import pickle
 
 random.seed(21)

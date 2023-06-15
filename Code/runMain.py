@@ -19,7 +19,7 @@ def main():
     # my_plt.cortex_colormap(statemon)
     
     ## Regular PA TMS ####
-    statemon, _,  ratemon_list_PA = ModelTMS.run_main_model(create_plots=True)
+    statemon, _,  ratemon_list_PA = ModelTMS.run_main_model(create_plots=False)
     my_plt.TMS_plot(ratemon_list_PA[4], save_plot=True, file_name = 'PA')
     
     # ##### AP Direction #####
